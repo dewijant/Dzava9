@@ -7,6 +7,8 @@ import java.util.function.Consumer;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
 
+import static java.util.Comparator.comparing;
+
 
 public class Main {
 
@@ -102,11 +104,16 @@ public class Main {
         Arrays.sort(people, Person.compareFirstName);
 
         for (Person p : people)
-            System.out.println(p.firstName);
+            System.out.println(p.getFirstName());
 
         Arrays.sort(people, Person::compareFirstNames);
 
-        logger.info("GIT WORK BRANCH");
+        logger.info(" -- GIT WORK BRANCH -- ");
+
+        Arrays.sort(people, comparing(Person::getAge));
+
+        for (Person p : people)
+            System.out.println(p.getFirstName());
 
 
 
