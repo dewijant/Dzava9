@@ -110,10 +110,17 @@ public class Main {
 
         logger.info(" -- GIT WORK BRANCH -- ");
 
-        Arrays.sort(people, comparing(Person::getAge));
+        // THEN COMPARING
+
+        // This combinatory “connection” of methods,
+        // known as functional composition, is common
+        // in functional programming and at the heart of
+        // why functional programming is as powerful as it is.
+        Arrays.sort(people, comparing(Person::getAge).thenComparing(Person::getFirstName));
 
         for (Person p : people)
             System.out.println(p.getFirstName());
+
 
 
 
