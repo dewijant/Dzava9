@@ -106,6 +106,8 @@ public class Main {
 
         Arrays.sort(people, Person::compareFirstNames);
 
+        logger.info("GIT WORK BRANCH");
+
 
 
     }
