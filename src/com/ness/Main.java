@@ -3,6 +3,7 @@ package com.ness;
 
 import java.awt.*;
 import java.util.*;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
 import java.util.stream.Stream;
@@ -95,10 +96,10 @@ public class Main {
             logger.info(point.toString());
         }*/
         Person[] people = new Person[] {
-                new Person("Ted", "Neward", 41),
-                new Person("Charlotte", "Neward", 41),
-                new Person("Michael", "Neward", 19),
-                new Person("Matthew", "Neward", 13)
+                new Person("Ted", "Neward1", 41),
+                new Person("Charlotte", "Neward2", 41),
+                new Person("Michael", "Neward3", 19),
+                new Person("Matthew", "Neward4", 13)
         };
 
         Arrays.sort(people, Person.compareFirstName);
@@ -118,10 +119,9 @@ public class Main {
         // why functional programming is as powerful as it is.
         Arrays.sort(people, comparing(Person::getAge).thenComparing(Person::getFirstName));
 
-        for (Person p : people)
-            System.out.println(p.getFirstName());
+        List<Person> personList = Arrays.asList(people);
 
-
+        personList.forEach((person) -> System.out.println("P: "+person.getLastName()));
 
 
     }
